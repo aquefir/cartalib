@@ -1,0 +1,11 @@
+Carta™ GUI Library
+
+Created by Alexander Nicholi
+Copyright © 2020 ARQADIUM LLC.
+All rights reserved.
+
+See COMPILING for build instructions. See COPYING for licencing. The src/
+subdirectory contains all of the engine source code. The doc/ subdirectory
+contains all of the engine documentation. In-tree third-party libraries are
+contained in the 3rdparty/ subdirectory, with their own subdirectories for
+source code and documentation.

@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/3rdparty/qlibclib/include",
+                "${workspaceFolder}/3rdparty/teslib/include",
+                "${workspaceFolder}/3rdparty/unilib/include",
+                "/usr/local/include"
+            ],
+            "cStandard": "c89",
+            "cppStandard": "c++11",
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/3rdparty/qlibclib/include",
+                "${workspaceFolder}/3rdparty/teslib/include",
+                "${workspaceFolder}/3rdparty/unilib/include",
+                "/usr/local/include"
+            ],
+            "cStandard": "c89",
+            "cppStandard": "c++11",
+            "compilerPath": "/usr/local/bin/gcc-8"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/3rdparty/qlibclib/include",
+                "${workspaceFolder}/3rdparty/teslib/include",
+                "${workspaceFolder}/3rdparty/unilib/include"
+            ],
+            "cStandard": "c89",
+            "cppStandard": "c++11",
+            "compilerPath": "/usr/local/bin/gcc-8"
+        }
+    ],
+    "version": 4
+}

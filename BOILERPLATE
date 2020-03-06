@@ -1,0 +1,19 @@
+This file contains the project’s copypastable boilerplate comment headers.
+
+Boilerplate for C-like languages:
+
+/****************************************************************************\
+ *                            Carta™ GUI Library                            *
+ *                                                                          *
+ *                      Copyright © 2020 ARQADIUM LLC.                      *
+ *                           All rights reserved.                           *
+\****************************************************************************/
+
+Hash-based boilerplate (Python, POSIX shell, Makefile):
+
+##############################################################################
+##                            Carta™ GUI Library                            ##
+##                                                                          ##
+##                      Copyright © 2020 ARQADIUM LLC.                      ##
+##                           All rights reserved.                           ##
+##############################################################################

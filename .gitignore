@@ -1,0 +1,64 @@
+#!/usr/bin/git
+# -*- coding: utf-8 -*-
+
+# Ignore 3rd-party dependencies
+/3rdparty/*
+# Keep the README for the listing
+!/3rdparty/README
+# vaginacore
+vgcore*
+# TES binaries
+*.tes
+# code coverage
+*.gcno
+*.gcda
+# professor data (code cov)
+*.profdata
+*.profraw
+# A-san / UB-san
+*.dSYM
+# Ignore VSCode stuff
+/.vscode/*
+# ...except #include stuffs
+!/.vscode/c_cpp_properties.json
+
+# binaries
+*.o
+*.obj
+*.a
+*.so*
+*.dylib
+*.exe
+*.dll
+
+# macOS trash
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Emacs
+*~
+\#*\#
+.\#*
