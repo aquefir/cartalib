@@ -1,8 +1,8 @@
 /****************************************************************************\
  *                            Carta™ GUI Library                            *
  *                                                                          *
- *                      Copyright © 2020 ARQADIUM LLC.                      *
- *                           All rights reserved.                           *
+ *                         Copyright © 2020 Aquefir                         *
+ *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
 #ifndef INC__CARTA_CARTA_H
