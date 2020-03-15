@@ -149,7 +149,7 @@ export CC
 export CXX
 export CPP
 export AR
-export CCLD
+export LD
 export STRIP
 export CC.NAME
 export CXX.NAME
