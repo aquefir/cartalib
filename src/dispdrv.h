@@ -21,8 +21,6 @@ struct carta_disp
 	s32v2 xypos;
 	u16 fullscr : 1;
 	u16 hwaccel : 1;
-	u16 aspratio_num : 7;
-	u16 aspratio_den : 7;
 	/* private */
 	SDL_Window* win;
 	SDL_Renderer* ren;
