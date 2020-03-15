@@ -23,8 +23,8 @@ struct carta_disp_initopts
 	u16 scale_den;
 	u16 start_fullscr : 1;
 	u16 req_hwaccel : 1;
-	u16 aspratio_num : 7;
-	u16 aspratio_den : 7;
+	/* this is a signed fixed-point number in range (-1, 1) */
+	u16 aspratio : 14;
 };
 
 CARTA_API UNI_OPTIONP( carta_disp ) carta_disp_init(

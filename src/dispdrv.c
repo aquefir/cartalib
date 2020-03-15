@@ -16,6 +16,34 @@
 #define INITIAL_NOM_RES_W 640
 #define INITIAL_NOM_RES_L 360
 
+static u16 fl32tonormfx14( f32 n )
+{
+	u32 ret;
+
+	ret = (u32)(n * 8191.0f);
+
+	if((ret & 0x3FFF) < ret)
+	{
+		ret &= 0x3FFF;
+	}
+
+	return (u16)ret;
+}
+
+static f32 normfx14tofl32( u16 n )
+{
+	f32 ret;
+
+	ret = (f32)n / 8191.0f;
+
+	if(ret < -1.0f)
+	{
+		ret = -1.0f;
+	}
+
+	return ret;
+}
+
 UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 {
 	UNI_OPTIONP( carta_disp ) ret;
