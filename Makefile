@@ -23,7 +23,7 @@ INCLUDEL := src
 
 # space-separated library name list for linking
 # libraries
-LIBS      :=
+LIBS      := SDL2
 LIBDIRS   :=
 
 # ‘3P’ are 3rd-party dependencies
@@ -35,8 +35,15 @@ LIBDIRS   :=
 # frameworks (macOS only)
 FWORKS := Cocoa
 
-CFILES    :=
-HFILES    :=
+CFILES    := \
+	src/carta.c \
+	src/dispdrv.c
+HFILES    := \
+	include/carta/carta.h \
+	include/carta/common.h \
+	include/carta/dispdrv.h \
+	src/carta.h \
+	src/dispdrv.h
 CPPFILES  :=
 HPPFILES  :=
 OFILES    := $(CFILES:.c=.c.o) $(CPPFILES:.cpp=.cpp.o)
@@ -44,7 +51,8 @@ OFILES    := $(CFILES:.c=.c.o) $(CPPFILES:.cpp=.cpp.o)
 GCNOFILES := $(CFILES:.c=.c.gcno) $(CPPFILES:.cpp=.cpp.gcno)
 GCDAFILES := $(CFILES:.c=.c.gcda) $(CPPFILES:.cpp=.cpp.gcda)
 
-TES_CFILES    :=
+TES_CFILES    := \
+	src/dispdrv.tes.c
 TES_HFILES    :=
 TES_CPPFILES  :=
 TES_HPPFILES  :=
