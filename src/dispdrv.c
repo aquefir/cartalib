@@ -10,39 +10,12 @@
 #include <SDL2/SDL.h>
 #include <stdlib.h>
 #include <string.h>
+#include <tes/program.h>
 #include <uni/option.h>
 #include <uni/types/vec.h>
 
 #define INITIAL_NOM_RES_W 640
 #define INITIAL_NOM_RES_L 360
-
-static u16 fl32tonormfx14( f32 n )
-{
-	u32 ret;
-
-	ret = (u32)(n * 8191.0f);
-
-	if((ret & 0x3FFF) < ret)
-	{
-		ret &= 0x3FFF;
-	}
-
-	return (u16)ret;
-}
-
-static f32 normfx14tofl32( u16 n )
-{
-	f32 ret;
-
-	ret = (f32)n / 8191.0f;
-
-	if(ret < -1.0f)
-	{
-		ret = -1.0f;
-	}
-
-	return ret;
-}
 
 UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 {
@@ -85,15 +58,22 @@ UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 	}
 	else
 	{
-		/* Options for initial scale are honored here */
+		phys_l = INITIAL_NOM_RES_L * 2;
+		phys_w = INITIAL_NOM_RES_W * 2;
 	}
 
-	ret.val->win = SDL_CreateWindow( "dummy", 0, 0, ret.val->nom_res[0],
-		ret.val->nom_res[1], (opts.start_fullscr ? SDL_WINDOW_FULLSCREEN : 0)
+	ret.val->win = SDL_CreateWindow( "dummy",
+		SDL_WINDOWPOS_CENTERED,
+		SDL_WINDOWPOS_CENTERED,
+		phys_w,
+		phys_l, (opts.start_fullscr ? SDL_WINDOW_FULLSCREEN : 0)
 		| SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALLOW_HIGHDPI );
 
 	if( ret.val->win == NULL )
 	{
+		free( ret.val );
+		ret.val = NULL;
+
 		return ret;
 	}
 
@@ -108,6 +88,14 @@ UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 
 	if(ret.val->ren == NULL)
 	{
+		SDL_DestroyWindow( ret.val->win );
+		free( ret.val );
+		ret.val = NULL;
+
 		return ret;
 	}
+
+	ret.is = 1;
+
+	return ret;
 }
