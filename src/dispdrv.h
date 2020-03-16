@@ -16,9 +16,7 @@
 struct carta_disp
 {
 	/* public (by accessor) */
-	u16v2 scale;
 	u32v2 nom_res;
-	s32v2 xypos;
 	u16 fullscr : 1;
 	u16 hwaccel : 1;
 	/* private */

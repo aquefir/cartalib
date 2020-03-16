@@ -5,9 +5,15 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC_API__CARTA_CARTA_H
-#define INC_API__CARTA_CARTA_H
+#ifndef INC__CARTA_REFLECTN_H
+#define INC__CARTA_REFLECTN_H
 
-struct carta_iface;
+#include <carta/common.h>
 
-#endif /* INC_API__CARTA_CARTA_H */
+struct carta_reflectn
+{
+	carta_hnd_t partn;
+	carta_hnd_t tgt;
+};
+
+#endif /* INC__CARTA_REFLECTN_H */

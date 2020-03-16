@@ -34,8 +34,6 @@ UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 	memset( ret.val, 0, sizeof( *ret.val ) );
 
 	/* copy over simple values from the options struct */
-	ret.val->scale = (u16v2){ opts.scale_num, opts.scale_den };
-	ret.val->xypos = (s32v2){ 0, 0 };
 	ret.val->fullscr = opts.start_fullscr == 0 ? 0 : 1;
 
 	/* calculate the physical resolution */
@@ -79,11 +77,13 @@ UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 
 	ret.val->ren = SDL_CreateRenderer( ret.val->win, -1,
 		SDL_RENDERER_ACCELERATED );
+	ret.val->hwaccel = 1;
 
 	if(ret.val->ren == NULL && !opts.req_hwaccel )
 	{
 		ret.val->ren = SDL_CreateRenderer( ret.val->win, -1,
 			SDL_RENDERER_SOFTWARE );
+		ret.val->hwaccel = 0;
 	}
 
 	if(ret.val->ren == NULL)
@@ -98,4 +98,11 @@ UNI_OPTIONP( carta_disp ) carta_disp_init( struct carta_disp_initopts opts )
 	ret.is = 1;
 
 	return ret;
+}
+
+void carta_disp_fini( struct carta_disp* d )
+{
+	SDL_DestroyRenderer( d->ren );
+	SDL_DestroyWindow( d->win );
+	free( d );
 }

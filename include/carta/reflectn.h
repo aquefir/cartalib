@@ -5,9 +5,9 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC_API__CARTA_CARTA_H
-#define INC_API__CARTA_CARTA_H
+#ifndef INC_API__CARTA_REFLECTN_H
+#define INC_API__CARTA_REFLECTN_H
 
-struct carta_iface;
+struct carta_reflectn;
 
-#endif /* INC_API__CARTA_CARTA_H */
+#endif /* INC_API__CARTA_REFLECTN_H */

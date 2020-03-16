@@ -5,9 +5,18 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC_API__CARTA_CARTA_H
-#define INC_API__CARTA_CARTA_H
+#ifndef INC__CARTA_PICTURE_H
+#define INC__CARTA_PICTURE_H
 
-struct carta_iface;
+#include <carta/common.h>
+#include <uni/types/int.h>
+#include <uni/types/vec.h>
 
-#endif /* INC_API__CARTA_CARTA_H */
+struct carta_picture
+{
+	carta_hnd_t partn;
+	u16v2 lw;
+	carta_col_t* px;
+};
+
+#endif /* INC__CARTA_PICTURE_H */
