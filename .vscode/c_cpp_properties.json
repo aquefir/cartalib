@@ -4,7 +4,6 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/3rdparty/qlibclib/include",
                 "${workspaceFolder}/3rdparty/teslib/include",
                 "${workspaceFolder}/3rdparty/unilib/include",
                 "/usr/local/include"
@@ -21,20 +20,18 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/3rdparty/qlibclib/include",
                 "${workspaceFolder}/3rdparty/teslib/include",
                 "${workspaceFolder}/3rdparty/unilib/include",
                 "/usr/local/include"
             ],
             "cStandard": "c89",
             "cppStandard": "c++11",
-            "compilerPath": "/usr/local/bin/gcc-8"
+            "compilerPath": "/usr/bin/gcc"
         },
         {
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/3rdparty/qlibclib/include",
                 "${workspaceFolder}/3rdparty/teslib/include",
                 "${workspaceFolder}/3rdparty/unilib/include"
             ],
